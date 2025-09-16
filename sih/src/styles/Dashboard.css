@@ -1,0 +1,135 @@
+/* 🌐 General Layout */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.dark-theme .dashboard-container {
+  background: linear-gradient(135deg, #1a2235 0%, #0d1117 100%);
+  color: #f0f0f0;
+}
+
+.dashboard-title {
+  font-weight: 600 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.dark-theme .dashboard-title {
+  color: #ffffff !important;
+}
+
+/* 🌐 Cards */
+.dashboard-card {
+  border-radius: 8px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.light-theme .dashboard-card {
+  background: #ffffff !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark-theme .dashboard-card {
+  background: #1e293b !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  text-align: left;
+}
+
+/* 🌐 Map Placeholder */
+.map-placeholder {
+  height: 200px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.05) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  border-radius: 6px;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+.dark-theme .map-placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  color: #b0b0b0;
+}
+
+/* 🌐 Tables */
+.MuiTableContainer-root {
+  border-radius: 6px;
+}
+
+.MuiTableHead-root {
+  background: #f0f0f0;
+}
+
+.dark-theme .MuiTableHead-root {
+  background: #2c3e50;
+}
+
+.MuiTableCell-head {
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  font-size: 0.85rem !important;
+}
+
+.MuiTableCell-root {
+  font-size: 0.9rem !important;
+}
+
+/* 🌐 Occupancy & KPIs */
+.occupancy-text,
+.kpi-text {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-card {
+  border-left: 5px solid #3498db !important;
+}
+
+/* 🌐 Alerts */
+.dashboard-alert {
+  font-size: 0.85rem !important;
+}
+
+/* 🌐 Chart */
+#analyticsChart {
+  margin-top: 1rem;
+  width: 100% !important;
+}
+
+/* 🌐 Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem !important;
+  }
+
+  .map-placeholder {
+    height: 150px;
+  }
+}

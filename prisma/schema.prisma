@@ -1,0 +1,105 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  username     String    @unique
+  passwordHash String    @map("password_hash")
+  role         String
+  createdAt    DateTime  @default(now()) @map("created_at")
+
+  // Relations
+  conflictsResolved Conflict[] @relation("ResolvedBy")
+  logs             Log[]
+}
+
+model Train {
+  id              Int       @id @default(autoincrement())
+  trainNumber     String    @map("train_number")
+  status          String
+  priority        Int?
+  currentSection  Section?  @relation("SectionTrains", fields: [currentSectionId], references: [id])
+  currentSectionId Int?     @map("current_section")
+  lastUpdate      DateTime? @map("last_update")
+
+  // Relations
+  timetables Timetable[]
+  conflicts1 Conflict[]   @relation("Train1")
+  conflicts2 Conflict[]   @relation("Train2")
+  logs       Log[]
+}
+
+model Section {
+  id              Int        @id @default(autoincrement())
+  name            String
+  occupancyStatus String     @map("occupancy_status")
+
+  // Relations
+  timetables Timetable[]
+  conflicts  Conflict[]
+  trains     Train[] @relation("SectionTrains")
+}
+
+model Timetable {
+  id            Int       @id @default(autoincrement())
+  scheduledTime DateTime  @map("scheduled_time")
+  actualTime    DateTime? @map("actual_time")
+
+  // FKs
+  trainId   Int
+  sectionId Int
+
+  // Relations
+  train   Train   @relation(fields: [trainId], references: [id])
+  section Section @relation(fields: [sectionId], references: [id])
+}
+
+model Conflict {
+  id                  Int       @id @default(autoincrement())
+  detectedAt          DateTime  @map("detected_at")
+  resolutionSuggestion String?   @map("resolution_suggestion")
+  resolved            Boolean   @default(false)
+  resolvedAt          DateTime?
+
+  // FKs
+  train1Id    Int
+  train2Id    Int
+  sectionId   Int
+  resolvedById Int?
+
+  // Relations
+  train1     Train @relation("Train1", fields: [train1Id], references: [id])
+  train2     Train @relation("Train2", fields: [train2Id], references: [id])
+  section    Section @relation(fields: [sectionId], references: [id])
+  resolvedBy User?   @relation("ResolvedBy", fields: [resolvedById], references: [id])
+}
+
+model Log {
+  id          Int       @id @default(autoincrement())
+  eventType   String    @map("event_type")
+  description String
+  timestamp   DateTime  @default(now())
+
+  // FKs
+  trainId Int?
+  userId  Int?
+
+  // Relations
+  train Train? @relation(fields: [trainId], references: [id])
+  user  User?  @relation(fields: [userId], references: [id])
+}
+
+model Analytics {
+  id          Int       @id @default(autoincrement())
+  metricName  String    @map("metric_name")
+  value       String
+  recordedAt  DateTime  @default(now()) @map("recorded_at")
+}

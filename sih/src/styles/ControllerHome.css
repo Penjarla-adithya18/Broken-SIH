@@ -1,0 +1,448 @@
+/* 🌐 General Layout */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.light-theme {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+}
+
+.dark-theme {
+  background: linear-gradient(135deg, #1a2235 0%, #0d1117 100%);
+  color: #f0f0f0;
+}
+
+/* 🌐 Navigation Bar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.light-theme .navbar {
+  background: #2c3e50;
+  color: #ffffff;
+}
+
+.dark-theme .navbar {
+  background: #0d1117;
+  color: #ffffff;
+}
+
+.navbar-logo {
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+}
+
+.light-theme .navbar-logo {
+  color: #ffffff !important;
+}
+
+.dark-theme .navbar-logo {
+  color: #ffffff !important;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links .nav-link {
+  font-weight: 500 !important;
+  text-transform: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.light-theme .navbar-links .nav-link {
+  color: #ecf0f1 !important;
+}
+
+.dark-theme .navbar-links .nav-link {
+  color: #f0f0f0 !important;
+}
+
+.light-theme .navbar-links .nav-link:hover {
+  color: #3498db !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme .navbar-links .nav-link:hover {
+  color: #64b5f6 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-links .nav-login {
+  border-radius: 4px !important;
+  padding: 0.4rem 1.2rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.light-theme .navbar-links .nav-login {
+  background: #3498db !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .navbar-links .nav-login {
+  background: #64b5f6 !important;
+  color: #0d1117 !important;
+}
+
+.light-theme .navbar-links .nav-login:hover {
+  background: #2980b9 !important;
+}
+
+.dark-theme .navbar-links .nav-login:hover {
+  background: #90caf9 !important;
+}
+
+.theme-toggle {
+  transition: transform 0.3s ease !important;
+}
+
+.theme-toggle:hover {
+  transform: rotate(30deg);
+}
+
+.light-theme .theme-toggle {
+  color: #ecf0f1 !important;
+}
+
+.dark-theme .theme-toggle {
+  color: #f0f0f0 !important;
+}
+
+/* 🌐 Header */
+.header-section {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  max-width: 800px;
+}
+
+.main-title {
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+}
+
+.light-theme .main-title {
+  color: #2c3e50 !important;
+}
+
+.dark-theme .main-title {
+  color: #f0f0f0 !important;
+}
+
+.subtitle {
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
+.light-theme .subtitle {
+  color: #7f8c8d !important;
+}
+
+.dark-theme .subtitle {
+  color: #b0b0b0 !important;
+}
+
+/* 🌐 Features */
+.features-section {
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem !important;
+  font-weight: 500 !important;
+  position: relative;
+}
+
+.light-theme .section-title {
+  color: #34495e !important;
+}
+
+.dark-theme .section-title {
+  color: #f0f0f0 !important;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.5rem auto;
+}
+
+.light-theme .section-title::after {
+  background: #3498db;
+}
+
+.dark-theme .section-title::after {
+  background: #64b5f6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  border-radius: 8px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  height: 100%;
+}
+
+.light-theme .feature-card {
+  background: #ffffff !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark-theme .feature-card {
+  background: #1e293b !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.light-theme .feature-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.dark-theme .feature-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-title {
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  text-align: center;
+}
+
+.light-theme .card-title {
+  color: #2c3e50 !important;
+}
+
+.dark-theme .card-title {
+  color: #f0f0f0 !important;
+}
+
+.card-description {
+  text-align: center !important;
+}
+
+.light-theme .card-description {
+  color: #7f8c8d !important;
+}
+
+.dark-theme .card-description {
+  color: #b0b0b0 !important;
+}
+
+.feature-card .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 🌐 Action Section */
+.action-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.light-theme .action-section {
+  background-color: #ffffff;
+}
+
+.dark-theme .action-section {
+  background-color: #1e293b;
+}
+
+.action-title {
+  margin-bottom: 1rem !important;
+  font-weight: 500 !important;
+}
+
+.light-theme .action-title {
+  color: #2c3e50 !important;
+}
+
+.dark-theme .action-title {
+  color: #f0f0f0 !important;
+}
+
+.action-subtitle {
+  margin-bottom: 2rem !important;
+}
+
+.light-theme .action-subtitle {
+  color: #7f8c8d !important;
+}
+
+.dark-theme .action-subtitle {
+  color: #b0b0b0 !important;
+}
+
+.button-group {
+  margin-top: 2rem;
+}
+
+.login-button {
+  padding: 0.75rem 2rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+.light-theme .login-button {
+  background-color: #2c3e50 !important;
+  color: white !important;
+}
+
+.dark-theme .login-button {
+  background-color: #64b5f6 !important;
+  color: #0d1117 !important;
+}
+
+.light-theme .login-button:hover {
+  background-color: #1a252f !important;
+}
+
+.dark-theme .login-button:hover {
+  background-color: #90caf9 !important;
+}
+
+.dashboard-button {
+  padding: 0.75rem 2rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+.light-theme .dashboard-button {
+  color: #2c3e50 !important;
+  border-color: #2c3e50 !important;
+}
+
+.dark-theme .dashboard-button {
+  color: #64b5f6 !important;
+  border-color: #64b5f6 !important;
+}
+
+.light-theme .dashboard-button:hover {
+  background-color: rgba(44, 62, 80, 0.04) !important;
+  border-color: #1a252f !important;
+}
+
+.dark-theme .dashboard-button:hover {
+  background-color: rgba(100, 181, 246, 0.1) !important;
+  border-color: #90caf9 !important;
+}
+
+/* 🌐 Footer */
+.footer {
+  margin-top: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-text {
+  transition: color 0.3s ease;
+}
+
+.light-theme .footer-text {
+  color: #7f8c8d !important;
+}
+
+.dark-theme .footer-text {
+  color: #b0b0b0 !important;
+}
+
+/* 🌐 Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-section {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .main-title {
+    font-size: 2rem !important;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .login-button, .dashboard-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar-links .nav-link {
+    margin: 0.25rem 0 !important;
+  }
+  
+  .main-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+}

@@ -1,0 +1,74 @@
+.simulation-container {
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.simulation-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.simulation-form {
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.simulation-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.simulation-output {
+  margin-top: 24px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.output-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.output-summary {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #2d3436;
+}
+
+.output-details {
+  background: #f4f6f8;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.output-comments {
+  margin-top: 14px;
+  font-style: italic;
+  color: #555;
+}
+
+button.MuiButton-contained {
+  background-color: #1976d2;
+  font-weight: 500;
+}
+
+button.MuiButton-contained:hover {
+  background-color: #1565c0;
+}
+
+button.MuiButton-outlined {
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+button.MuiButton-outlined:hover {
+  background-color: #e3f2fd;
+}

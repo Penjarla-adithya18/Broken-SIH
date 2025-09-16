@@ -1,0 +1,119 @@
+/* 🌐 Page Container */
+.conflict-container {
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.dark-theme .conflict-container {
+  background: linear-gradient(135deg, #1a2235 0%, #0d1117 100%);
+  color: #f0f0f0;
+}
+
+.conflict-title {
+  font-weight: 600 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.dark-theme .conflict-title {
+  color: #ffffff !important;
+}
+
+/* 🌐 Conflict Card */
+.conflict-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid #f39c12;
+  background: #ffe0e0;
+}
+
+.light-theme .conflict-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .conflict-card {
+  background: #2c3e50;
+  border-left: 6px solid #e67e22;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.conflict-card:hover {
+  transform: translateY(-5px);
+}
+
+.conflict-header {
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* 🌐 Status Chips */
+.conflict-chip {
+  margin-bottom: 0.5rem !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+}
+
+/* 🌐 Conflict Details */
+.conflict-detail {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+.conflict-detail b {
+  color: #2c3e50;
+}
+
+.dark-theme .conflict-detail b {
+  color: #f1f1f1;
+}
+
+/* 🌐 Resolve Form */
+.resolve-form {
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.light-theme .resolve-form {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .resolve-form {
+  background: #1e293b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.resolve-form h6 {
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* 🌐 Buttons */
+.resolve-button {
+  margin-top: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  text-transform: none !important;
+}
+
+/* 🌐 Responsive */
+@media (max-width: 768px) {
+  .conflict-container {
+    padding: 1rem;
+  }
+
+  .conflict-title {
+    font-size: 1.5rem !important;
+  }
+
+  .conflict-card,
+  .resolve-form {
+    padding: 1rem;
+  }
+}
